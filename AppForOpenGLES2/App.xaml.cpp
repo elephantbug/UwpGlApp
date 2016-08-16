@@ -10,12 +10,12 @@ App::App()
 
 void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e)
 {
-#if _DEBUG
-    if (IsDebuggerPresent())
-    {
-        DebugSettings->EnableFrameRateCounter = true;
-    }
-#endif
+//#if _DEBUG
+//    if (IsDebuggerPresent())
+//    {
+//        DebugSettings->EnableFrameRateCounter = true;
+//    }
+//#endif
 
     if (mPage == nullptr)
     {

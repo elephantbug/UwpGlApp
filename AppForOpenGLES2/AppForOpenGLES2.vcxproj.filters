@@ -27,4 +27,42 @@
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SimpleRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)OpenGLES.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="OpenGLESPage.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MathHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SimpleRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLES.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="OpenGLESPage.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppForOpenGLES2_TemporaryKey.pfx" />
+    <None Include="$(AngleBinPath)libEGL.dll">
+      <Filter>Binaries</Filter>
+    </None>
+    <None Include="$(AngleBinPath)libGLESv2.dll">
+      <Filter>Binaries</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="OpenGLESPage.xaml" />
+  </ItemGroup>
 </Project>

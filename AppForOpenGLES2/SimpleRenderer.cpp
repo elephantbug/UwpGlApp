@@ -105,12 +105,12 @@ SimpleRenderer::SimpleRenderer() :
         uniform mat4 uViewMatrix;
         uniform mat4 uProjMatrix;
         attribute vec4 aPosition;
-        attribute vec4 aColor;
+        attribute vec3 aColor;
         varying vec4 vColor;
         void main()
         {
             gl_Position = uProjMatrix * uViewMatrix * uModelMatrix * aPosition;
-            vColor = aColor;
+            vColor = vec4(aColor, 0.1);
         }
     );
 
@@ -222,7 +222,11 @@ SimpleRenderer::~SimpleRenderer()
 void SimpleRenderer::Draw()
 {
     glEnable(GL_DEPTH_TEST);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//glEnable(GL_BLEND);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
+	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     if (mProgram == 0)
         return;
