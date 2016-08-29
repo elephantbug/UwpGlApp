@@ -11,6 +11,7 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
+                ref class Grid;
                 ref class SwapChainPanel;
             }
         }
@@ -32,6 +33,7 @@ namespace AppForOpenGLES2
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::Grid^ mainGrid;
         private: ::Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;
     };
 }

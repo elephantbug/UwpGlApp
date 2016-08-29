@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,11 +30,37 @@ void ::AppForOpenGLES2::OpenGLESPage::Connect(int __connectionId, ::Platform::Ob
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->swapChainPanel = safe_cast<::Windows::UI::Xaml::Controls::SwapChainPanel^>(__target);
-            }
-            break;
+    case 1:
+        {
+            this->mainGrid = safe_cast<::Windows::UI::Xaml::Controls::Grid^>(__target);
+        }
+        break;
+    case 2:
+        {
+            this->swapChainPanel = safe_cast<::Windows::UI::Xaml::Controls::SwapChainPanel^>(__target);
+        }
+        break;
+    case 3:
+        {
+            ::Windows::UI::Xaml::Controls::Button^ element3 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(element3))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::AppForOpenGLES2::OpenGLESPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&OpenGLESPage::Red_Click);
+        }
+        break;
+    case 4:
+        {
+            ::Windows::UI::Xaml::Controls::Button^ element4 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(element4))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::AppForOpenGLES2::OpenGLESPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&OpenGLESPage::Green_Click);
+        }
+        break;
+    case 5:
+        {
+            ::Windows::UI::Xaml::Controls::Button^ element5 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(element5))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::AppForOpenGLES2::OpenGLESPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&OpenGLESPage::Black_Click);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -42,5 +71,7 @@ void ::AppForOpenGLES2::OpenGLESPage::Connect(int __connectionId, ::Platform::Ob
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

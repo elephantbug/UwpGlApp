@@ -156,3 +156,29 @@ void OpenGLESPage::StopRenderLoop()
         mRenderLoopWorker = nullptr;
     }
 }
+
+void AppForOpenGLES2::OpenGLESPage::Red_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	using namespace Windows::UI::Xaml::Media;
+	using namespace Windows::UI;
+
+	mainGrid->Background = ref new SolidColorBrush(Color{255, 0, 0, 255});
+}
+
+
+void AppForOpenGLES2::OpenGLESPage::Green_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	using namespace Windows::UI::Xaml::Media;
+	using namespace Windows::UI;
+
+	mainGrid->Background = ref new SolidColorBrush(Color{ 0, 255, 0, 255 });
+}
+
+
+void AppForOpenGLES2::OpenGLESPage::Black_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	using namespace Windows::UI::Xaml::Media;
+	using namespace Windows::UI;
+
+	mainGrid->Background = ref new SolidColorBrush(Color{ 0, 0, 0, 255 });
+}

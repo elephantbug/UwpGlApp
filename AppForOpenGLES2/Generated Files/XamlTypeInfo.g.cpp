@@ -57,7 +57,7 @@ struct TypeInfo
     bool    isBindable;
 };
 
-TypeInfo TypeInfos[] = 
+const TypeInfo TypeInfos[] = 
 {
     //   0
     L"AppForOpenGLES2.OpenGLESPage", L"",
@@ -85,7 +85,7 @@ TypeInfo TypeInfos[] =
     false, false, false, false,
 };
 
-UINT TypeInfoLookup[] = { 
+const UINT TypeInfoLookup[] = { 
       0,   //   0
       0,   //   1
       0,   //   2
@@ -126,7 +126,7 @@ UINT TypeInfoLookup[] = {
       3,   //  37
 };
 
-TypeInfo* GetTypeInfo(::Platform::String^ typeName)
+const TypeInfo* GetTypeInfo(::Platform::String^ typeName)
 {
     int typeNameLength = typeName->Length();
     if (typeNameLength < _countof(TypeInfoLookup) - 1)
@@ -154,8 +154,8 @@ TypeInfo* GetTypeInfo(::Platform::String^ typeName)
 
 ::Windows::UI::Xaml::Markup::IXamlType^ ::XamlTypeInfo::InfoProvider::XamlTypeInfoProvider::CreateXamlType(::Platform::String^ typeName)
 {
-    TypeInfo* pTypeInfo = GetTypeInfo(typeName);
-    TypeInfo* pNextTypeInfo = pTypeInfo + 1;
+    const TypeInfo* pTypeInfo = GetTypeInfo(typeName);
+    const TypeInfo* pNextTypeInfo = pTypeInfo + 1;
     if (pTypeInfo == nullptr || pNextTypeInfo == nullptr)
     {
         return nullptr;

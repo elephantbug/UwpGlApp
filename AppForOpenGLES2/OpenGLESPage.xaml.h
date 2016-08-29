@@ -28,5 +28,8 @@ namespace AppForOpenGLES2
         EGLSurface mRenderSurface;     // This surface is associated with a swapChainPanel on the page
         Concurrency::critical_section mRenderSurfaceCriticalSection;
         Windows::Foundation::IAsyncAction^ mRenderLoopWorker;
-    };
+		void Red_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void Green_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void Black_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+	};
 }
