@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="mainGrid" Background="Black">
+    <Grid x:Name="mainGrid" Background="Green">
         <SwapChainPanel x:Name="swapChainPanel">
             <StackPanel Orientation="Vertical">
                 <Button Content="Red" Click="Red_Click" Margin="10"/>
